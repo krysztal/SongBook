@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     [Table("Elaboration")]
-    public class Elaboration
+    public class Elaboration : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,5 +27,16 @@ namespace espiewnik.Entities
         ICollection<ElaborationComposer> ElaborationComposers { get; set; }
         ICollection<Scope> Scops { get; set; }
         ICollection<File> Files { get; set; }
+
+
+
+        public void CopyData(object obj)
+        {
+            Elaboration fromElaboration = (Elaboration)obj;
+            SongId = fromElaboration.SongId;
+            Language = fromElaboration.Language;
+            Text = fromElaboration.Text;
+            Year = fromElaboration.Year;
+        }
     }
 }

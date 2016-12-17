@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
-    [Table("FileType")]
-    public class FileType
+    [Table("Voice")]
+    public class Voice : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,6 +14,14 @@ namespace espiewnik.Entities
         [Required, MaxLength(20)]
         public string Name { get; set; }
 
-        ICollection<File> Files { get; set; }
+        public ICollection<Scope> Scops { get; set; }
+
+
+
+        public void CopyData(object obj)
+        {
+            Voice fromVoice = (Voice)obj;
+            Name = fromVoice.Name;
+        }
     }
 }

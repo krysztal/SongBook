@@ -4,9 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using espiewnik.Entities;
+using SongBook.Entities;
+using SongBook.Repositories;
+using SongBook.Services;
 
-namespace espiewnik
+namespace SongBook
 {
     public class Startup
     {
@@ -27,11 +29,14 @@ namespace espiewnik
             var connection = @"Server=KRYSZTAL-PC;Database=espiewnik;Trusted_Connection=True;";
 
             services.AddMvc();
-            services.AddDbContext<SpiewnikContext>(option => option.UseSqlServer(connection));
+            services.AddDbContext<SongBookContext>(option => option.UseSqlServer(connection));
+
+            services.AddScoped<ISongRepository, SongRepository>();
+            services.AddScoped<ISongService, SongService>();
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SpiewnikContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, SongBookContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();

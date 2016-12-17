@@ -3,39 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SongBook.Entities;
+using SongBook.Repositories;
+using SongBook.Services;
 
-namespace espiewnik.Controllers
+namespace SongBook.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class SongsController : Controller
     {
-        // GET api/values
+        ISongService SongService;
+
+        public SongsController(ISongService songService)
+        {
+            SongService = songService;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Song> Get()
         {
-            return new string[] { "value1", "value2" };
+            return SongService.GetSongs();
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Song Get(int id)
         {
-            return "value";
+            return SongService.GetSong(id);
         }
 
-        // POST api/values
+
         [HttpPost]
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

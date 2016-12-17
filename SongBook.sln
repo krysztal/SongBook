@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.25928.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{01D1EDAD-CE7D-4433-A9F1-43D09CD5CF32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "espiewnik", "src\espiewnik\espiewnik.csproj", "{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongBook", "src\SongBook\SongBook.csproj", "{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FA6995-7CD2-4C63-8B85-9C3BDAD26EFB}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

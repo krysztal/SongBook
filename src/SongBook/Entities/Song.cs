@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     [Table("Song")]
-    public class Song
+    public class Song : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,5 +20,12 @@ namespace espiewnik.Entities
 
         public ICollection<CategorySong> CategoriesSong { get; set; }
         public ICollection<Elaboration> Elaborations { get; set; }
+
+        public void CopyData(object obj)
+        {
+            Song fromSong = (Song)obj;
+            Name = fromSong.Name;
+            Name = fromSong.FileName;
+        }
     }
 }

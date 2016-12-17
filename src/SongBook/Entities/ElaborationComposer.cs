@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     [Table("ElaborationComposer")]
-    public class ElaborationComposer
+    public class ElaborationComposer : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,5 +18,14 @@ namespace espiewnik.Entities
 
         [ForeignKey("ComposerId")]
         public Composer Composer { get; set; }
+
+
+
+        public void CopyData(object obj)
+        {
+            ElaborationComposer fromElaborationComposer = (ElaborationComposer)obj;
+            ElaborationId = fromElaborationComposer.ElaborationId;
+            ComposerId = fromElaborationComposer.ComposerId;
+        }
     }
 }

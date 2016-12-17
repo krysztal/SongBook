@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
-    public class SpiewnikContext : DbContext
+    public class SongBookContext : DbContext
     {
-        public SpiewnikContext(DbContextOptions<SpiewnikContext> options)
+        public SongBookContext(DbContextOptions<SongBookContext> options)
             : base(options)
         {}
 

@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     [Table("Category")]
-    public class Category
+    public class Category : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -21,5 +21,14 @@ namespace espiewnik.Entities
         public Category Parent { get; set; }
         public ICollection<Category> SubCategories { get; set; }
         public ICollection<CategorySong> CategorySongs { get; set; }
+
+
+
+        public void CopyData(object obj)
+        {
+            Category fromCategory = (Category)obj;
+            Name = fromCategory.Name;
+            PerentId = fromCategory.PerentId;
+        }
     }
 }

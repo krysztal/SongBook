@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     [Table("File")]
-    public class File
+    public class File : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,5 +29,15 @@ namespace espiewnik.Entities
         [ForeignKey("ScopeId")]
         public Scope Scope { get; set; }
 
+
+
+        public void CopyData(object obj)
+        {
+            File fromFile = (File)obj;
+            Name = fromFile.Name;
+            ElaborationId = fromFile.ElaborationId;
+            TypeId = fromFile.TypeId;
+            ScopeId = fromFile.ScopeId;
+        }
     }
 }

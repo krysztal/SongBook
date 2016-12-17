@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
     public class DbInitializer
     {
-        public static void Initialize(SpiewnikContext context)
+        public static void Initialize(SongBookContext context)
         {
             context.Database.EnsureCreated();
         }

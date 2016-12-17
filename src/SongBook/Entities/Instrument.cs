@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace espiewnik.Entities
+namespace SongBook.Entities
 {
-    [Table("Voice")]
-    public class Voice
+    [Table("Instrument")]
+    public class Instrument : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,5 +15,13 @@ namespace espiewnik.Entities
         public string Name { get; set; }
 
         public ICollection<Scope> Scops { get; set; }
+
+
+
+        public void CopyData(object obj)
+        {
+            Instrument fromInstrument = (Instrument)obj;
+            Name = fromInstrument.Name;
+        }
     }
 }
