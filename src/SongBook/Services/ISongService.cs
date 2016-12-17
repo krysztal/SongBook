@@ -8,7 +8,8 @@ namespace SongBook.Services
     {
         IEnumerable<Song> GetSongs();
         Song GetSong(int id);
+        Song AddSong(Song song);
         Song UpdateSong(Song song);
-        void RemoveSong(Song song);
+        void RemoveSong(int id);
     }
 }

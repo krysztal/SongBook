@@ -23,9 +23,14 @@ namespace SongBook.Services
             return SongRepository.GetSongs();
         }
 
-        public void RemoveSong(Song song)
+        public Song AddSong(Song song)
         {
-            SongRepository.RemoveSong(song);
+           return SongRepository.AddSong(song);
+        }
+
+        public void RemoveSong(int id)
+        {
+            SongRepository.RemoveSong(id);
         }
 
         public Song UpdateSong(Song song)

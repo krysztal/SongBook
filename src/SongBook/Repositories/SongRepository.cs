@@ -23,6 +23,13 @@ namespace SongBook.Repositories
             return _context.Songs.SingleOrDefault(s => s.Id == id);
         }
 
+        public Song AddSong(Song song)
+        {
+            _context.Add(song);
+            _context.SaveChanges();
+            return song;
+        }
+
         public Song UpdateSong(Song song)
         {
             Song Song = _context.Songs.Where(s => s.Id == song.Id).First();
@@ -32,9 +39,9 @@ namespace SongBook.Repositories
             return Song;
         }
 
-        public void RemoveSong(Song song)
+        public void RemoveSong(int id)
         {
-            Song Song = GetSong(song.Id);
+            Song Song = GetSong(id);
             _context.Remove(Song);
             _context.SaveChanges();
         }

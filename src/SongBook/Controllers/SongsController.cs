@@ -33,18 +33,21 @@ namespace SongBook.Controllers
 
 
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Song song)
         {
+            SongService.UpdateSong(song);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Song Put(int id, [FromBody]Song song)
         {
+            return SongService.AddSong(song);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            SongService.RemoveSong(id);
         }
     }
 }
