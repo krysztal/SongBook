@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using SongBook.Entities;
+using SongBook.Dtos;
 using SongBook.Repositories;
+using SongBook.Utils;
 
 namespace SongBook.Services
 {
@@ -23,9 +25,10 @@ namespace SongBook.Services
             return SongRepository.GetSongs();
         }
 
-        public Song AddSong(Song song)
+        public SongDto AddSong(SongDto songDto)
         {
-           return SongRepository.AddSong(song);
+            Song song = Mapper.Map(songDto);
+            return Mapper.Map(SongRepository.AddSong(song));
         }
 
         public void RemoveSong(int id)

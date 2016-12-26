@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SongBook.Entities;
-using SongBook.Repositories;
+using SongBook.Dtos;
 using SongBook.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace SongBook.Controllers
 {
@@ -38,10 +39,11 @@ namespace SongBook.Controllers
             SongService.UpdateSong(song);
         }
 
-        [HttpPut("{id}")]
-        public Song Put(int id, [FromBody]Song song)
+        [HttpPut]
+        public string Put(IList<IFormFile> files)
         {
-            return SongService.AddSong(song);
+
+          return "";
         }
 
         [HttpDelete("{id}")]
@@ -49,5 +51,6 @@ namespace SongBook.Controllers
         {
             SongService.RemoveSong(id);
         }
+
     }
 }

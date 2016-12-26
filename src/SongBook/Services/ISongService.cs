@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SongBook.Entities;
+using SongBook.Dtos;
 
 
 namespace SongBook.Services
@@ -8,7 +9,7 @@ namespace SongBook.Services
     {
         IEnumerable<Song> GetSongs();
         Song GetSong(int id);
-        Song AddSong(Song song);
+        SongDto AddSong(SongDto song);
         Song UpdateSong(Song song);
         void RemoveSong(int id);
     }
