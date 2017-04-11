@@ -26,7 +26,7 @@ namespace SongBook
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=KRYSZTAL-PC;Database=espiewnik;Trusted_Connection=True;";
+            var connection = @"Server=KRYSZTAL-PC\KrysztalSQL;Database=songbook;Trusted_Connection=True;";
 
             services.AddMvc();
             services.AddDbContext<SongBookContext>(option => option.UseSqlServer(connection));
