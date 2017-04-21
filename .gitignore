@@ -280,3 +280,9 @@ __pycache__/
 
 ### VisualStudio Patch ###
 build/
+
+
+#typescript
+**/app/**/*.js
+**/app/**/*.js.map
+**/typings
