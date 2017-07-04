@@ -3,7 +3,13 @@
 
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppComponent }   from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+
+
+import { PlayerComponent } from "./player/player.component";
+import { PlayerModule } from "./player/player.module";
 
 // @NgModule - декоратор, который определяет данные для создаваемого модуля.
 // Для того чтобы приложение могло выполняться в браузере, текущий модуль (корневой модуль)
@@ -11,8 +17,8 @@ import { AppComponent }   from './app.component';
 // Задача BrowserModule зарегистрировать основные сервис провайдеры приложения, 
 // а также добавить общие директивы такие как ngIf и ngFor
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent ], // корневой компонент данного приложения
+  imports:      [ BrowserModule, AppRoutingModule, PlayerModule ],
+  declarations: [ AppComponent, PlayerComponent ], // корневой компонент данного приложения
   bootstrap:    [ AppComponent ]  // компонент с которого начинается отображение приложения
 })
 

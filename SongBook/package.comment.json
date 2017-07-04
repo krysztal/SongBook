@@ -23,7 +23,7 @@
     "@angular/upgrade": "2.0.0",                    // Утилиты для обновления Angular 1 приложения
     "core-js": "^2.4.1",                            // Замещает некоторые методы глобального объекта window для поддержки ES2015 (ES6)
     "reflect-metadata": "^0.1.3",                   // Зависимость, которая совместно используется Angular и TypeScript. Для обновления TS без обновления Angular
-    "rxjs": "5.0.0-beta.12",                        // Polyfill для Observable спецификации https://github.com/zenparsing/es-observable
+    "rxjs": "6.0.0-alpha.0",                        // Polyfill для Observable спецификации https://github.com/zenparsing/es-observable
     "systemjs": "0.19.27",                          // Динамический загрузчик модулей совместимый со спецификацией ES2015 module http://www.2ality.com/2014/09/es6-modules-final.html
     "zone.js": "^0.6.23",                           // Polyfill для Zone спецификации https://gist.github.com/mhevery/63fdcdf7c65886051d55
     "angular2-in-memory-web-api": "0.0.20",         // Библиотека для эмуляции веб апи сервера без наличия самого сервера.
@@ -33,7 +33,7 @@
   "devDependencies": {
     "concurrently": "^2.2.0",   // Для параллельного запуска нескольких npm команд
     "lite-server": "^2.2.2",    // Легковесный сервер
-    "typescript": "^2.0.2",     // TypeScript 
+    "typescript": "2.3.4",     // TypeScript 
     "typings": "^1.3.2"         // Менеджер для TS difinition files
   }
 }
