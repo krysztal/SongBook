@@ -1,0 +1,12 @@
+.showfolder:hover {
+    color: #F8D7B8;
+}
+
+.showfolder {
+    color: whitesmoke;
+    opacity: 0.99;
+}
+
+.folder {
+    cursor: pointer;    
+}

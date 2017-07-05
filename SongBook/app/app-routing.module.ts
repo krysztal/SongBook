@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { PlayerComponent } from "./player/player.component"
+import { PlayerComponent } from "./player/player.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
     imports: [RouterModule.forRoot([
@@ -13,6 +14,10 @@ import { PlayerComponent } from "./player/player.component"
         {
             path: "player",
             component: PlayerComponent
+        },
+        {
+            path: "login",
+            component: LoginComponent
         }
     ])],
     exports: [RouterModule]

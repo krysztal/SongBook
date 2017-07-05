@@ -76,15 +76,6 @@ span#stop{
 	width: 670px;
 }
 
-.showfolder:hover {
-    color: #F8D7B8;
-}
-
-.showfolder {
-    color: whitesmoke;
-    opacity: 0.99;
-}
-
 .treefolder {
     color: whitesmoke;
 }
@@ -216,17 +207,7 @@ img.imgBotton {
 	margin: 5px 5px 19px 13px !important;
     width: 14px !important;
 }
-#InFolder{
-    overflow: auto;
-    width: 550px;
-    color: white;
-	/*
-    box-shadow: 0 0 5px 1px black;
-	border-radius: 2%;
-    background-image: url("app/images/fon2.png");
-	z-index:9;
-	*/
-}
+
 
 #SongContent{
 	border-radius: 10px;

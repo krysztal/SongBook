@@ -1,6 +1,5 @@
 <div>
-    <div *ngFor="let song of songs"
-         (click)="onSelect(song)">
-         <a style="font: 20px;" class="folder showfolder">{{song.name}}</a>
+    <div *ngFor="let song of songs">
+         <a (click)="onSelect(song)" style="font: 20px;" class="folder showfolder">{{song.name}}</a>
     </div>
 </div>

@@ -6,18 +6,20 @@ import { PlayerBarComponent } from "./player-bar/player-bar.component";
 import { SongListComponent } from "./song-list/song-list.component";
 import { SongDetailsComponent } from "./song-details/song-details.component";
 
-//import { PlayerRoutingModule } from "./player-routing.module"
+// import { PlayerRoutingModule } from "./player-routing.module"
 
 import { SongService } from "../services/song/song.service"
 
 @NgModule({
     imports: [
         CommonModule
+        //PlayerRoutingModule
     ],
     declarations: [
-        PlayerBarComponent
-        // SongListComponent,
-        // SongDetailsComponent
+        PlayerComponent,
+        PlayerBarComponent,
+        SongListComponent,
+        SongDetailsComponent
     ],
     providers: [SongService]
     

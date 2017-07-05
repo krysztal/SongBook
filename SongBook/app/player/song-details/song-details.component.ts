@@ -10,7 +10,7 @@ import { SongService } from "../../services/song/song.service";
     styleUrls: ["song-details.component.css"]
 })
 export class SongDetailsComponent implements OnInit {
-    song;
+    song: Song;
 
     constructor(private router: Router, 
         private activatedRoute: ActivatedRoute,
@@ -18,7 +18,7 @@ export class SongDetailsComponent implements OnInit {
 
     ngOnInit() {
         this.activatedRoute.params.forEach((params: Params) => {
-            let id = +params["id"];
+            let id = +params["song"];
             this.songService
                 .getSong(id)
                 .then(result => this.song = result);

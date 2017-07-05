@@ -1,0 +1,11 @@
+#InFolder{
+    overflow: auto;
+    width: 550px;
+    color: white;
+	/*
+    box-shadow: 0 0 5px 1px black;
+	border-radius: 2%;
+    background-image: url("app/images/fon2.png");
+	z-index:9;
+	*/
+}

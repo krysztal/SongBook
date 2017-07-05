@@ -1,10 +1,9 @@
-import { Component } from "@angular/core"
+import { Component } from "@angular/core";
 
 @Component({
     moduleId: module.id,
-    selector: 'player-bar',
+    selector: "player-bar",
     templateUrl: "player-bar.component.html",
     styleUrls: ["player-bar.component.css"]
 })
-
 export class PlayerBarComponent { }

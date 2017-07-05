@@ -13,7 +13,7 @@ import { SongService } from "../../services/song/song.service";
 export class SongListComponent implements OnInit {
     songs;
 
-    constructor(private router: Router, private songService: SongService) {}
+    constructor(private router: Router, private songService: SongService) { }
 
     ngOnInit() {
         this.songService
@@ -22,6 +22,6 @@ export class SongListComponent implements OnInit {
     }
 
     onSelect(selected: Song) {
-        this.router.navigate(["/song", selected.id])
+        this.router.navigate(["/player", { song: selected.id }]);
     }
 }
