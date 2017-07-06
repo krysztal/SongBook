@@ -9,6 +9,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { PlayerModule } from "./player/player.module";
 import { LoginComponent } from "./login/login.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 // @NgModule - декоратор, который определяет данные для создаваемого модуля.
@@ -17,7 +18,7 @@ import { LoginComponent } from "./login/login.component";
 // Задача BrowserModule зарегистрировать основные сервис провайдеры приложения, 
 // а также добавить общие директивы такие как ngIf и ngFor
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, PlayerModule ],
+  imports:      [ BrowserModule, AppRoutingModule, PlayerModule, ReactiveFormsModule ],
   declarations: [ AppComponent, LoginComponent ], // корневой компонент данного приложения
   bootstrap:    [ AppComponent ]  // компонент с которого начинается отображение приложения
 })

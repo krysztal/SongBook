@@ -1,21 +1,25 @@
 <div class="grid-container">
     <div id="login-wrapper">
         <div class="login">
-            <form>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div *ngIf="formErrors.email" class="alert alert-danger">
+				    {{ formErrors.email }}
+			    </div>
+                <div *ngIf="formErrors.password" class="alert alert-danger">
+				    {{ formErrors.password }}
+			    </div>
+                {{ formErrors.password }}
                 <div>
-                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Email" formControlName="email" required />
                 </div>
                 <div>
-                    <input type="text" placeholder="Password"/>
+                    <input type="text" placeholder="Password" formControlName="password" required minlength="6"/>
                 </div>
                 <div>
                     <input type="submit" value="Login"/>
                 </div>
                 <div>
-                    <input type="submit" value="Log in with Facebook"/>
-                </div>
-                <div>
-                    <input type="submit" value="Log in with Facebook"/>
+                    <input type="submit" [disabled]="!userForm.valid" value="Log in with Facebook"/>
                 </div>
             </form>
         </div>
