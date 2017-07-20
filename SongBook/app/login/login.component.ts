@@ -70,7 +70,6 @@ export class LoginComponent implements OnInit {
 }
 
 
-
 class LoginData {
     public email: string;
     public password: string;

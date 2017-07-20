@@ -9,6 +9,7 @@ import { SongDetailsComponent } from "./song-details/song-details.component";
 // import { PlayerRoutingModule } from "./player-routing.module"
 
 import { SongService } from "../services/song/song.service"
+import { AudioService } from "./shared/audio.service";
 
 @NgModule({
     imports: [
@@ -21,7 +22,7 @@ import { SongService } from "../services/song/song.service"
         SongListComponent,
         SongDetailsComponent
     ],
-    providers: [SongService]
+    providers: [SongService, AudioService]
     
 })
 export class PlayerModule {}

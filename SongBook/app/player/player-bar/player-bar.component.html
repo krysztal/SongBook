@@ -1,26 +1,33 @@
-<div id="player" onselectstart="return false" onmousedown="return false">
+<div id="player-bar" onselectstart="return false" onmousedown="return false">
     <div id="buttons">
         <table cellspacing="0" cellpadding="0">
             <tr>
-                <td><span title="Odtwarzaj" id="play"></span></td>
-                <td><span title="Wstrzymaj" id="pause" style="display: none;"></span></td>
-                <td class="buttonSpace"></td>
-                <td><span title="Zatrzymaj" id="stop"></span></td>
-                <td class="buttonSpace"></td>
-                <td><span id="duration">0:00</span></td>
-                <td class="buttonSpace"></td>
-                <td>
-                    <div id="progressBar">
-                        <span id="progress"></span>
+                <td class="right-space" [style.display]="playing ? 'none' : 'block'">
+                    <span title="Odtwarzaj" class="button" id="play" (click)="play()"></span>
+                </td>
+                <td class="right-space"  [style.display]="playing ? 'block' : 'none'">
+                    <span title="Wstrzymaj" class="button" id="pause" (click)="pause()"></span>
+                </td>
+                <td class="right-space">
+                    <span title="Zatrzymaj" class="button" id="stop" (click)="stop()"></span>
+                </td>
+                <td class="right-space">
+                    <span id="duration">{{ elapsed }}</span>
+                </td>
+                <td class="right-space">
+                    <div id="progressBar" (click)="changePosition($event)">
+                        <span id="progress" [style.width]="positionInProc + '%'"></span>
                     </div>
                 </td>
-                <td class="buttonSpace"></td>
-                <td><span id="durationFullTime">0:00</span></td>
-                <td class="buttonSpace"></td>
-                <td><span title="Głosność" id="volume"></span></td>
-                <td class="buttonSpace"></td>
-                <td><span title="Generator slajdów" id="SlideCreatorPanel" class="slideCreatorClose"></span></td>
-                <td class="buttonSpace"></td>
+                <td class="right-space">
+                    <span id="durationFullTime"> {{ duration }}</span>
+                </td>
+                <td class="right-space">
+                    <span title="Głosność" id="volume"></span>
+                </td>
+                <td class="right-space">
+                    <span title="Generator slajdów" id="SlideCreatorPanel" class="slideCreatorClose"></span>
+                </td>
             </tr>
         </table>
     </div>
